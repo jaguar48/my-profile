@@ -21,17 +21,17 @@ def operationlist(request):
     operation_type = serializer.validated_data['operation_type']
     
     if operation_type == "addition":
-        results = x + y
+        result = x + y
         
     elif operation_type == "subtraction":
-        results = x - y
+        result = x - y
         
     elif operation_type == "multiplication":
-        results = x * y
+        result = x * y
 
     context = {
         "slackUsername": "Bishop",
         "operation_type": operation_type,
-        "results": results
+        "result": result
     }
     return Response(context, status = status.HTTP_200_OK)
